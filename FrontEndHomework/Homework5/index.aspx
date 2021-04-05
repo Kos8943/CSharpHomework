@@ -24,7 +24,7 @@
     <script>
         var itemArr = <%= this.ArrText %>;
 
-        init(itemAr);
+        init(itemArr);
     </script>
 </body>
 </html>

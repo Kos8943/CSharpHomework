@@ -13,7 +13,7 @@
     $("#btn1").click(function () {
         var errorMsgArr = [];
 
-        if (!checkRequiredField($("input[name=acount]"))) {
+        if (!checkRequiredField($("input[name=account]"))) {
             errorMsgArr.push("Account is required.");
         }
 
@@ -29,7 +29,7 @@
             errorMsgArr.push("Name is required.");
         }
 
-        if ($("input[name=pwd]").val() != $("input[name=rewd]").val()) {
+        if ($("input[name=pwd]").val() != $("input[name=repwd]").val()) {
             errorMsgArr.push("Password should be the same.");
         }
 
