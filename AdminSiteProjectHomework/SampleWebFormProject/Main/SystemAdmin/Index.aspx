@@ -13,8 +13,9 @@
             <tr><td>帳號</td><td><asp:TextBox runat="server" ID="txtAccount" ></asp:TextBox></td></tr>
             <tr><td>密碼</td><td><asp:TextBox runat="server" ID="txtPWD" ></asp:TextBox></td></tr>
         </table>
-
-        <asp:Button runat="server" ID="btn1" Text="Login" />
+        
+        <asp:Button runat="server" ID="btn1" Text="Login" OnClick="btn1_Click"/>
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </form>
 </body>
 </html>

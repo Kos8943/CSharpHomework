@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 namespace Main.SystemAdmin
 {
@@ -17,9 +18,14 @@ namespace Main.SystemAdmin
 
         protected void btn1_Click(object sender, EventArgs e)
         {
-            if (!LoginHelper.TryLogin(this.txtPWD.Text, this.txtAccount.Text))
+            if (LoginHelper.TryLogin(this.txtAccount.Text, this.txtPWD.Text))
             {
                 Response.Redirect("~/SystemAdmin/MainPage.aspx");
+            }
+            else
+            {
+                this.Label1.Text = "*帳號或密碼錯誤";
+                this.Label1.ForeColor = Color.Red;
             }
         }
     }
