@@ -18,7 +18,10 @@ var init = function () {
             item.Price + "</td>";
 
         newDom.innerHTML = html;
+        table1.appendChild(newDom);
+        
     }
+    
 }
 
 init();

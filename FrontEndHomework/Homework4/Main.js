@@ -1,9 +1,11 @@
 ﻿$(document).ready(function () {
-    var nickName = $("input[name=nicknam]");
-    var title = $("inpu[name=titl]");
-    var message = $("input[name=message]");
+    var nickName = $("input[name=nickname]");
+    var title = $("input[name=title]");
+    var message = $("textarea[name=message]");
 
     $("#btn1").click(function () {
+        console.log(message);
+
         var html =
             '<div style="border: 1px solid black;"><p>NickName: ' +
             nickName.val() + "</p><p> Time: " +
