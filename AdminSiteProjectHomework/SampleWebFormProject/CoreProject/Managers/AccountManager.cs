@@ -145,7 +145,7 @@ namespace CoreProject.Managers
                         ON Accounts.ID = AccountInfos.ID
                         {filterConditions}
                     ) AS TempT
-                    WHERE RowNumber > {pageSize * (1 - 1)}
+                    WHERE RowNumber > {pageSize * (currentPage - 1)}
                     ORDER BY ID
                 ";
 
@@ -187,7 +187,7 @@ namespace CoreProject.Managers
             // 算總數並回傳
             int? totalSize2 = this.GetScale(countQuery, dbParameters) as int?;
             totalSize = (totalSize2.HasValue) ? totalSize2.Value : 0;
-            totalSize = 33;
+            //totalSize = 70;
 
             return list;
         }

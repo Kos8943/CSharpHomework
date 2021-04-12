@@ -73,7 +73,7 @@ namespace Main.SystemAdmin
                 if (!Guid.TryParse(qsID, out temp))
                     return;
 
-                manager.GetAccountViewModel(temp);
+                model = manager.GetAccountViewModel(temp);
             }
             else
             {
@@ -86,6 +86,11 @@ namespace Main.SystemAdmin
                 if (!string.IsNullOrEmpty(this.txtPWD.Text) &&
                 !string.IsNullOrEmpty(this.txtNewPWD.Text))
                 {
+                    if(model.PWD == this.txtNewPWD.Text)
+                    {
+                        this.lblMsg.Text = "新密碼不可和原密碼相同";
+                        return;
+                    }
                     if (model.PWD == this.txtPWD.Text)
                     {
                         model.PWD = this.txtNewPWD.Text.Trim();
@@ -138,7 +143,7 @@ namespace Main.SystemAdmin
 
 
             if (this.IsUpdateMode())
-                manager.CreateAccountViewModel(model);
+                manager.UpdateAccountViewModel(model);
             else
             {
                 try
